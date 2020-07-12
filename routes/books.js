@@ -3,6 +3,9 @@ const route = express.Router();
 const auth = require('./../middleware/auth');
 const Book = require('./../models/Book.js');
 
+route.get('/', (req, res) => {
+    res.json({ "id": "it works"});
+})
 route.get('/books', auth, async (req, res) => {
     try{
     const books = await Book.find({userId: req.id});
