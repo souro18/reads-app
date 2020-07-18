@@ -15,7 +15,7 @@ route.post('/register',async (req, res) => {
             const hashPass= await bcrypt.hash(user.password, salt);
             user.password = hashPass;
             const savedUser = await user.save();
-            res.json({ user: savedUser});
+            res.json({ name: savedUser.name, email: savedUser.email});
         } else {
             //console.log("before error");
             return res.status(400).json({msg: 'User already exists'});
