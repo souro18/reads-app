@@ -9,7 +9,8 @@ const PORT = process.env.PORT || 8080;
 //
 mongoose.connect(process.env.MONGODB_URI ,
     { useUnifiedTopology: true,
-    useNewUrlParser: true }, ()=>{
+    useNewUrlParser: true,
+    useFindAndModify: false  }, ()=>{
     console.log("connected");
 })
 app.use(cors());

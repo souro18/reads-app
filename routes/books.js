@@ -18,7 +18,11 @@ route.post('/book', auth, async (req, res) => {
     const book = new Book({
         title: req.body.title,
         state: req.body.state,
-        userId: req.id
+        userId: req.id,
+        subtitle: req.body.subtitle,
+        imageLinks: req.body.imageLinks,
+        description: req.body.description,
+        authors: req.body.authors,
     })
     try{
         await book.save();
